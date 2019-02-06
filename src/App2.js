@@ -26,22 +26,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <vaadin-date-picker label="When were you born?" />
-          <img src={logo} className="App-logo" alt="logo" />
-
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="form">
+          <vaadin-text-field label="First Name" ref="firstName" />
+          <vaadin-text-field label="Last Name" ref="lastName" />
+          <vaadin-button ref="addButton"> Add </vaadin-button>
+        </div>
+        <vaadin-grid ref="grid">
+          <vaadin-grid-column path="firstName" header="First name" />
+          <vaadin-grid-column path="lastName" header="Last name" />
+        </vaadin-grid>
       </div>
     );
   }
